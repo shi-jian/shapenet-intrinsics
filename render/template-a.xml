@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene version="0.5.0">
+	
+    <shape type="shapenet">
+        <string name="filename" value="$model" />
+    </shape>
+
+    <emitter type="constant" />
+
+    <integrator type="field">
+		<string name="field" value="albedo" />
+		<spectrum name="undefined" value="0" />
+	</integrator>
+
+    <sensor type="perspective">
+        <transform name="toWorld">
+            <lookAt target="0,0,0" origin="$view" up="0,1,0"/>
+        </transform>
+
+        <sampler type="ldsampler">
+            <integer name="sampleCount" value="16"/>
+        </sampler>
+
+        <film type="hdrfilm">
+            <integer name="width" value="256"/>
+            <integer name="height" value="256"/>
+            <boolean name="banner" value="false"/>
+			<boolean name="attachLog" value="false"/>
+        </film>
+    </sensor>
+</scene>
