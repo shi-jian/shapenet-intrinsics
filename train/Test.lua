@@ -6,6 +6,9 @@ require 'nngraph'
 require 'cunn'
 require 'cudnn'
 
+-- for old model
+-- require 'Patch'
+
 local cmd = torch.CmdLine()
 
 cmd:option('-input', '', 'input image')
